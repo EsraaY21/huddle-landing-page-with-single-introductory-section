@@ -25,9 +25,10 @@ body {
   background-color: var(--color-violet);
   background-image: url(../images/bg-desktop.svg);
   background-repeat: no-repeat, no-repeat;
+  background-size: contain;
   font-family: var(--ff-body);
-  padding: 64px 80px 40px 80px;
   color: white;
+  padding: 64px 80px 40px 80px;
 
 }
 
@@ -36,28 +37,39 @@ body {
   line-height: 27px;
 }
 
-footer img {
+main {
+  max-width: 1089px;
+  margin-inline: auto;
+
+}
+
+header img {
   height: 32px;
 }
 
-main {
+section {
   margin-top: 80px;
   margin-bottom: 27px;
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 60px;
+}
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 100px;
+.img_container,
+.text_container {
+  flex: 1;
+  /* Makes each div take up equal width */
 }
 
 
 h1 {
   font-family: var(--ff-heading);
+  font-weight: 600;
   font-size: 40px;
   line-height: 60px;
-  font-weight: 600;
 }
+
 
 .text_container p {
   margin-top: 24px;
@@ -103,7 +115,6 @@ h1 {
   align-items: center;
   transition: all 0.3s ease-in-out;
 
-
 }
 
 .icons a:hover {
@@ -111,22 +122,32 @@ h1 {
   border-color: var(--color-soft-magenta);
 }
 
-/* LARGE SCREENS ************************************** */
-@media screen and (min-width:1440px) {
-  main {
-    flex-direction: row;
+/* SMALL SCREENS ************************************** */
+@media screen and (max-width:1439px) {
+  section {
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  body {
+    padding: 40px;
+  }
+
+  h1 {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .text_container a {
+   margin-inline: auto;
+  }
+  
+
+  .icons {
     justify-content: center;
   }
 
-  .text_container {
-    padding-right: 230px;
-
-  }
-
-  .img_container,
-  .text_container {
-    flex: 1;
-    /* Makes each div take up equal width */
-  }
+  
 
 }
